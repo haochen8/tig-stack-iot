@@ -9,7 +9,7 @@ from umqtt.simple import MQTTClient
 import json
 
 # MQTT Broker Settings
-MQTT_BROKER = "192.168.10.157"
+MQTT_BROKER = "broker.hivemq.com"
 MQTT_PORT = 1883
 MQTT_TOPIC = "test/dht11"
 
@@ -23,6 +23,7 @@ print("Device IP:", ip)
 # MQTT Connection
 client = MQTTClient("pico_client", MQTT_BROKER, port=MQTT_PORT)
 client.connect()
+print("MQTT connected to broker.hivemq.com")
 
 while True:
     try:
